@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('progetti', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->text('descrizione');
+            $table->foreignId('tipologia_id')->constrained('tipologie');
             $table->timestamps();
         });
     }
